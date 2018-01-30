@@ -1,10 +1,9 @@
 Solution Description - The repository consist of 3 solutions which are created in Visual Studio 2017 IDE.
+1. PeoplePetUtility- This is the class library which includes all the business logic to request web api to get the json data and then group and sort json data on owner gender and pets(cat) names. In this project I have used the dependency inject pattern to dynamically inject the repository into class so that we can change the repository at any time. Today the repository is fetching data from rest api but it can easily we pointed to other data sources. HttpClient is used to call the web api asynchronously and the operation is waited for completion using await. Exception handling is done by throwing exceptions from the project to the consumer project so that the consumer can have project specific handling of the exceptions. Model class people is created which represents the json data returned from web api.
 
-    PeoplePetUtility- This is the class library which includes all the business logic to request web api to get the json data and then group and sort json data on owner gender and pets(cat) names. In this project I have used the dependenct inject pattern to dynamically inject the repository into class so that we can change the repository at any time. Today the repository is fetching data from rest api but it can easily we pointed to other data sources. HttpClient is used to call the web api asynchronously and the operation is waited for completion using await. Exception handling is done by throwing exceptions from the project to the consumer project so that the consumer can have project specific handling of the exceptions. Model class peopleis created which represents the json data returned from web api.
+2. PeoplePetUtility.Tests- This is the xunit test project created to test the PeoplePetUtility class library. Both Fact and Theory test methods are created to test different scenarios. I have created a custom PeoplePetUtilityData Attribute which will feed the test method with different sets of data for different test cases.
 
-    PeoplePetUtility.Tests- This is the xunit test project created to test the PeoplePetUtility class library. Both Fact and Theory test methods are created to test different scenerios. I have created a custome PeoplePetUtilityData Attribute which will feed the test method with differnet sets of data for different test cases.
-
-    PeoplePetUtilityWebApp - This is the Asp.net Core MVC Web application which consumes the PeoplePetUtility class library to display fetched json data in browser.
+3. PeoplePetUtilityWebApp - This is the Asp.net Core MVC Web application which consumes the PeoplePetUtility class library to display fetched json data in browser.
 
 How to Execute-
 
